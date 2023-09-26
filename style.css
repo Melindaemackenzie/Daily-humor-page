@@ -1,5 +1,62 @@
 body {
-    background: blue;
+    background: plum;
   }
 
+h1 {
+    display: flex;
+    justify-content: center; 
+     align-items: center;
+     color: black;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+img {
+    align-items: center;
+    width: 200px; /* Set the desired width */
+    height: 150px; /* Set the desired height */
+  }
+
+  button {
+    /* Increase the width and height */
+    width: 150px; /* Adjust to your desired width */
+    height: 150x; /* Adjust to your desired height */
+  
+    /* Adjust padding to provide spacing around the text */
+    padding: 10px 20px; /* Top/Bottom padding 10px, Left/Right padding 20px */
+  
+    /* Increase the font size */
+    font-size: 20px; /* Adjust to your desired font size */
+  
+    /* Optionally, you can adjust other styles as needed */
+    background-color: white; /* Button background color */
+    color: black; /* Text color */
+    border: white; /* Remove border if needed */
+    border-radius: 5px; /* Add rounded corners if desired */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    margin: 5px;
+  }
+  
+
+  #image-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    height: 25vh; /* Make the container take the full viewport height */
+}
+
+#button-container {
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center; /* Center the buttons vertically */
+    height: 25vh; /* Make the container take the full viewport height */
+}
+
+#jokes {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-family:Arial, Helvetica, sans-serif
+}
+  
+  
+  
   
