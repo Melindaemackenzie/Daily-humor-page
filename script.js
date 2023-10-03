@@ -16,11 +16,24 @@ function getJokes() {
             const jokeList = document.createElement('li');
             jokeList.innerHTML =
             `<h2>${joke.setup}</h2>`
-            ul.appendChild(jokeList).addEventListener('click', () => {
+            ul.appendChild(jokeList);
+            let punchlineDisplayed = false;
+            
+            jokeList.addEventListener('click', () => {
+                if (!punchlineDisplayed) {
             const punchLine = document.createElement('p');
             punchLine.innerHTML =
             `<h3>${joke.punchline}</h3>`
             jokeList.appendChild(punchLine)
+            punchlineDisplayed = true;
+            const button = document.createElement('button');
+            button.innerHTML = 'That is a good one!';
+            punchLine.appendChild(button)
+            const addJokeButton = document.createElement('button');
+            addJokeButton.innerHTML = 'I can do better!';
+            punchLine.appendChild(addJokeButton)
+
+                }
 
             })
         })
