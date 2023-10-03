@@ -43,12 +43,7 @@ img {
     height: 25vh; /* Make the container take the full viewport height */
 }
 
-#button-container {
-    display: flex; /* Use flexbox to arrange buttons horizontally */
-    justify-content: center; /* Center the buttons horizontally */
-    align-items: center; /* Center the buttons vertically */
-    height: 25vh; /* Make the container take the full viewport height */
-}
+
 
 #jokes {
     justify-content: center;
@@ -95,5 +90,14 @@ img {
     align-items: center;
     font-family: arial;
     font-size: 25px
+    
+}
+
+#pageInstructions {
+    display: flex;
+    justify-content: center;
+    font-family: 'Gill Sans'; 
+    font-size: 40px;
+    color: whitesmoke
     
 }
