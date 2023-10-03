@@ -2,11 +2,11 @@
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="style.css" />
-    <title>Dad Jokes</title>
+    <title>Programming Jokes</title>
     
   </head>
   <body>
-    <h1>Your Daily Dose of Dad Humor!</h1>
+    <h1>Your Daily Dose of Humor!</h1>
     <br>
     <br>
 
@@ -18,7 +18,7 @@
 
     <div id="jokes" class="jokes-container">
       <ul>
-        <!-- Joke appears here-->
+        <!-- Jokes appear here-->
       </ul>
       
 
@@ -30,22 +30,36 @@
               <!-- "click event" -->
               <!-- "click event" -->
               <!-- "submit event" -->
+      <span id="heartIcon" style="display: none;">❤️</span> <!-- Initially hidden -->
           
     <br>
+    
     <br>
 
-    <div class="container">
-      <form class="add-joke-form">
+    <div class="container" >
+      <form id ="jokeForm" class="add-joke-form">
         <h3>Add your own joke!</h3>
 
         <input
           type="text"
           name="name"
           value=""
-          placeholder="Enter a dad joke.."
+          placeholder="Enter joke setup."
           class="input-text"
+          id="jokeInput"
         />
+
+        <input
+          type="text"
+          name="joke"
+          value=""
+          placeholder="Enter punchline"
+          class="input-text"
+          id="jokePunchline"
+          />
         <br />
+        <br>
+        <br>
         
         <input
           type="submit"
@@ -54,6 +68,17 @@
           class="submit"
         />
       </form>
+      <br>
+      <br>
+      <br>
+    </div>
+
+      <div id="userInputJoke">
+        <!-- User submitted joke displayed here -->
+
+      </div>
+
+      
 
     
 

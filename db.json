@@ -1,0 +1,34 @@
+{
+    "dadJokes" : [
+    {
+        "id":"0",
+        "likes":"0",
+        "image": "",
+        "content": "I'm tired of following my dreams. I'm just going to ask them where they are going and meet up with them later.",
+    },
+    {
+        "id":1,
+        "likes":0,
+        "image":
+        "content":
+    }
+    {
+        "id":2,
+        "likes":0,
+        "image":
+        "content":
+    }
+    {
+        "id":3,
+        "likes":0,
+        "image":
+        "content":
+    }
+    {
+        "id":4,
+        "likes":0,
+        "image":
+        "content":
+    }
+
+]}

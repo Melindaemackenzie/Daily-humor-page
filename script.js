@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
     getJokes()
 })
@@ -7,28 +9,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function getJokes() {
     const ul = document.getElementById('jokes');
-  
-    fetch('https://icanhazdadjoke.com/', {
-      headers: {
-        'Accept': 'application/json' // Request JSON response from the API
-      }
-    })
+    fetch('https://official-joke-api.appspot.com/jokes/ten')
       .then(res => res.json())
-      .then(data => {
-        // Check if the API response contains a joke
-        if (data.joke) {
-          // Create a new list item and add the joke as its text content
-          const li = document.createElement('li');
-          li.textContent = data.joke;
-  
-          // Append the list item to the unordered list
-          ul.appendChild(li);
-        }
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
+      .then(jokes => {
+        jokes.forEach(joke => {
+            const jokeList = document.createElement('li');
+            jokeList.innerHTML =
+            `<h2>${joke.setup}</h2>`
+            ul.appendChild(jokeList).addEventListener('click', () => {
+            const punchLine = document.createElement('p');
+            punchLine.innerHTML =
+            `<h3>${joke.punchline}</h3>`
+            jokeList.appendChild(punchLine)
 
+            })
+        })
+            })
+
+            
+       
      
 
       // Create a new image element
@@ -56,5 +55,67 @@ const addJokeButton = document.createElement('button');
 addJokeButton.innerHTML = 'I can do better!';
 buttonContainer.appendChild(addJokeButton);
 
+button.addEventListener('click', ()  => {
+    if (heartIcon.style.display === 'none') {
+        heartIcon.style.display = 'inline'; // Show the heart icon
+    } else {
+        heartIcon.style.display = 'none'; // Hide the heart icon
+    }
+});
 
-  }
+
+
+/*const jokeFormContainer = document.querySelector(".container")
+addJokeButton.addEventListener('click', () => {
+    addJoke = !addJoke
+    if (addJoke) {
+        jokeFormContainer.style.display = "block";
+    }
+    else {
+        jokeFormContainer.style.display = "none";
+    }
+}) */
+
+const jokeFormContainer = document.querySelector('.container');
+
+addJokeButton.addEventListener('click', () => {
+    // Toggle the form's visibility using CSS class
+    const jokeForm = document.getElementById('jokeForm');
+    jokeForm.style.display = jokeForm.style.display === 'none' ? 'block' : 'none';
+});
+
+
+const jokeForm = document.getElementById('jokeForm');
+const jokeInput = document.getElementById('jokeInput');
+const userInputJokeContainer = document.getElementById('userInputJoke'); //to display joke
+const jokePunchline = document.getElementById('jokePunchline');
+
+jokeForm.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent page reload
+
+    const userInput = jokeInput.value; // Get the user's input
+    const userPunchline = jokePunchline.value;
+    // Create a new <p> element to display the user's input joke
+    const userInputJokeElement = document.createElement('p');
+    userInputJokeElement.textContent = `"${userInput}"`;
+    const userInputJokePunchline = document.createElement('p');
+    userInputJokePunchline.textContent = `"${userPunchline}"`
+
+    // Append the <p> element to the container for user input jokes
+    userInputJokeContainer.appendChild(userInputJokeElement);
+    userInputJokeContainer.appendChild(userInputJokePunchline);
+
+    // Clear the input field
+    jokeInput.value = '';
+    jokePunchline.value = '';
+});
+
+}
+
+
+
+
+
+
+
+
