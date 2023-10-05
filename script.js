@@ -78,16 +78,16 @@ jokeForm.addEventListener('submit', (event) => {
     event.preventDefault(); // Prevent page reload
     const userInput = jokeInput.value; // Get the user's input
     const userPunchline = jokePunchline.value;
-    // Create a new <p> element to display the user's input joke
+    // Create a new <li> element to display the user's input joke
     const userInputJokeElement = document.createElement('li');
     userInputJokeElement.textContent = `"${userInput}"`;
     const userInputJokePunchline = document.createElement('p');
     userInputJokePunchline.textContent = `"${userPunchline}"`
-    // Append the <p> element to the container for user input jokes
+    // Append the <li> element to the container & ul for user input jokes
     userInputJokeContainer.appendChild(jokeListDisplay);
     jokeListDisplay.appendChild(userInputJokeElement)
     userInputJokeElement.appendChild(userInputJokePunchline);
-    // Clear the input field
+    // Clear the input field after user submits joke
     jokeInput.value = '';
     jokePunchline.value = '';
 });
