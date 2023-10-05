@@ -17,9 +17,9 @@ function getJokes() {
             jokeList.innerHTML =
             `<h2>${joke.setup}</h2>`
             ul.appendChild(jokeList);
-            
 
 
+            //Display punchline when "add your own" button is clicked
             let punchlineDisplayed = false;
             jokeList.addEventListener('click', () => {
                 if (!punchlineDisplayed) {
@@ -29,7 +29,7 @@ function getJokes() {
             jokeList.appendChild(punchLine)
             punchlineDisplayed = true;
            
-           
+           //Create like button & Add your own joke butto
             const likeButton = document.createElement('button');
             likeButton.innerHTML = 'That is a good one!';
             punchLine.appendChild(likeButton)
@@ -41,10 +41,10 @@ function getJokes() {
                 if (heartIcon.style.display === 'none') {
                     heartIcon.style.display = 'inline'; // Show the heart icon
                 }
-                
+                //Hearticon display below like button
                 likeButton.appendChild(heartIcon)
             });
-
+            // Display "add joke form" when Add Joke Button is clicked
             addJokeButton.addEventListener('click', () => {
                 const jokeForm = document.getElementById('jokeForm');
             jokeForm.style.display = jokeForm.style.display === 'none' ? 'block' : 'none';
