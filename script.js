@@ -72,18 +72,20 @@ const jokeForm = document.getElementById('jokeForm');
 const jokeInput = document.getElementById('jokeInput');
 const userInputJokeContainer = document.getElementById('userInputJoke'); //to display joke
 const jokePunchline = document.getElementById('jokePunchline');
+const jokeListDisplay = document.createElement('ul')
 
 jokeForm.addEventListener('submit', (event) => {
     event.preventDefault(); // Prevent page reload
     const userInput = jokeInput.value; // Get the user's input
     const userPunchline = jokePunchline.value;
     // Create a new <p> element to display the user's input joke
-    const userInputJokeElement = document.createElement('p');
+    const userInputJokeElement = document.createElement('li');
     userInputJokeElement.textContent = `"${userInput}"`;
     const userInputJokePunchline = document.createElement('p');
     userInputJokePunchline.textContent = `"${userPunchline}"`
     // Append the <p> element to the container for user input jokes
-    userInputJokeContainer.appendChild(userInputJokeElement);
+    userInputJokeContainer.appendChild(jokeListDisplay);
+    jokeListDisplay.appendChild(userInputJokeElement)
     userInputJokeElement.appendChild(userInputJokePunchline);
     // Clear the input field
     jokeInput.value = '';
